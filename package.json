@@ -1,0 +1,45 @@
+{
+  "name": "nodejs-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "del-cli --force ./dist & tsc",
+    "lint:base": "eslint --ignore-path .gitignore",
+    "lint:check": "npm run lint:base -- src/",
+    "lint:write": "npm run lint:check -- --fix",
+    "prepare": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "emittery": "^0.7.1",
+    "uuid": "^8.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.24",
+    "del-cli": "^3.0.1",
+    "eslint": "^5.11.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "esm": "^3.2.22",
+    "husky": "^3.0.3",
+    "lint-staged": "^8.1.0",
+    "prettier": "1.14.2",
+    "typescript": "^4.0.0-dev.20200725"
+  },
+  "optionalDependencies": {
+    "fsevents": "*"
+  },
+
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:base -- --fix",
+      "git add"
+    ]
+  }
+}
