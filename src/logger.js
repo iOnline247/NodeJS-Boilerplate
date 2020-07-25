@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint class-methods-use-this: ["error", { "exceptMethods": ["EVENTS"] }] */
 import Emittery from "emittery";
 
