@@ -1,23 +1,19 @@
 {
-    "compileOnSave": true,
-    "compilerOptions": {
-        "esModuleInterop": true,
-        "target": "ESNext",
-        "allowJs": true,
-        "checkJs": true,
-        "alwaysStrict": true,
-        "emitBOM": false,
-        "incremental": true,
-        "module": "CommonJS",
-        "moduleResolution": "Node",
-        "outDir": "dist",
-        "removeComments": true,
-        "sourceMap": true
-    },
-    "include": [
-        "src/**/*"
-    ],
-    "exclude": [
-        "node_modules/**/*"
-    ]
+  "compileOnSave": true,
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "target": "ESNext",
+    "allowJs": true,
+    "checkJs": true,
+    "alwaysStrict": true,
+    "emitBOM": false,
+    "incremental": true,
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "outDir": "dist",
+    "removeComments": true,
+    "sourceMap": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules/**/*", "dist/**/*"]
 }
