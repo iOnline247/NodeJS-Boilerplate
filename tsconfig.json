@@ -1,13 +1,14 @@
 {
     "compileOnSave": true,
     "compilerOptions": {
-        "target": "ES2018",
+        "esModuleInterop": true,
+        "target": "ESNext",
         "allowJs": true,
-        "allowSyntheticDefaultImports": true,
         "checkJs": true,
         "alwaysStrict": true,
         "emitBOM": false,
         "incremental": true,
+        "module": "CommonJS",
         "moduleResolution": "Node",
         "outDir": "dist",
         "removeComments": true,
