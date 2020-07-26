@@ -24,7 +24,6 @@
     "@typescript-eslint/parser": "^3.7.0",
     "del-cli": "^3.0.1",
     "eslint": "^7.5.0",
-    "esm": "^3.2.22",
     "husky": "^3.0.3",
     "lint-staged": "^8.1.0",
     "prettier": "1.14.2",
