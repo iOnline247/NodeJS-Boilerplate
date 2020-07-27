@@ -20,3 +20,13 @@ logger.on(Logger.EVENTS.LOGGED, async (payload) => {
 });
 
 logger.log("Hola, Mundo");
+logger.error("NOPE");
+
+// Param shadowing test.
+function test(logger) {
+  logger = null;
+
+  console.log(logger);
+}
+
+test("test");
