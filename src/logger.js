@@ -25,7 +25,7 @@ const LOG_LEVELS = {
 };
 const logLevelName = () => (LOG_LEVEL || LOG_TYPES.DEBUG).toUpperCase();
 const isLogLevelEnabled = (level) => level >= LOG_LEVELS[logLevelName()];
-const createLogEvent = (severity, logger, input = {}) => {
+const createLogEvent = (severity, input = {}) => {
   const message = input;
   const now = new Date().toISOString();
   const logPayload = {
@@ -125,7 +125,7 @@ class Logger extends Emittery {
   async debug(input) {
     const logType = LOG_TYPES.DEBUG;
     const isEnabled = isLogLevelEnabled(LOG_LEVELS[logType]);
-    const payload = createLogEvent(logType, this, input);
+    const payload = createLogEvent(logType, input);
 
     if (isEnabled) {
       await this.#emitAndLogEvents(logType, payload);
@@ -137,7 +137,7 @@ class Logger extends Emittery {
   async error(input) {
     const logType = LOG_TYPES.ERROR;
     const isEnabled = isLogLevelEnabled(LOG_LEVELS[logType]);
-    const payload = createLogEvent(logType, this, input);
+    const payload = createLogEvent(logType, input);
 
     if (isEnabled) {
       await this.#emitAndLogEvents(logType, payload);
@@ -149,7 +149,7 @@ class Logger extends Emittery {
   async info(input) {
     const logType = LOG_TYPES.INFO;
     const isEnabled = isLogLevelEnabled(LOG_LEVELS[logType]);
-    const payload = createLogEvent(logType, this, input);
+    const payload = createLogEvent(logType, input);
 
     if (isEnabled) {
       await this.#emitAndLogEvents(logType, payload);
@@ -161,7 +161,7 @@ class Logger extends Emittery {
   async log(input) {
     const logType = LOG_TYPES.LOG;
     const isEnabled = isLogLevelEnabled(LOG_LEVELS[logType]);
-    const payload = createLogEvent(logType, this, input);
+    const payload = createLogEvent(logType, input);
 
     if (isEnabled) {
       await this.#emitAndLogEvents(logType, payload);
@@ -173,7 +173,7 @@ class Logger extends Emittery {
   async warn(input) {
     const logType = LOG_TYPES.WARN;
     const isEnabled = isLogLevelEnabled(LOG_LEVELS[logType]);
-    const payload = createLogEvent(logType, this, input);
+    const payload = createLogEvent(logType, input);
 
     if (isEnabled) {
       await this.#emitAndLogEvents(logType, payload);
