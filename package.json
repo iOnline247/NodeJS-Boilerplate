@@ -4,7 +4,7 @@
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
-    "build": "del-cli ./dist .ts --force & tsc",
+    "build": "del-cli ./dist ./.ts --force & tsc",
     "lint:base": "eslint --ignore-path .gitignore",
     "lint:check": "npm run lint:base -- src/",
     "lint:write": "npm run lint:check -- --fix",
