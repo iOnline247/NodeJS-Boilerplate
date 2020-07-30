@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint class-methods-use-this: ["error", { "exceptMethods": ["EVENTS"] }] */
 import Emittery from "emittery";
 
@@ -32,7 +31,7 @@ const createLogEvent = (severity, input = {}) => {
     severity,
     message: String(message),
     logTimestamp: now,
-    agentTimestamp: now
+    agentTimestamp: now,
   };
 
   return logPayload;
@@ -53,7 +52,7 @@ class Logger extends Emittery {
     logToConsole(logType, this.correlationId, payload);
 
     await Promise.all([
-      this.emit(Logger.EVENTS.LOGGING, payload)
+      this.emit(Logger.EVENTS.LOGGING, payload),
       // logEvent(payload)
     ]);
 
@@ -74,9 +73,7 @@ class Logger extends Emittery {
     super();
 
     if (!correlationId) {
-      throw new TypeError(
-        "correlationId is a required parameter."
-      );
+      throw new TypeError("correlationId is a required parameter.");
     }
 
     if (!jobId) {
@@ -87,17 +84,13 @@ class Logger extends Emittery {
     const _appName = APPLICATION_NAME || appName;
 
     if (_appName == null) {
-      throw new TypeError(
-        "appName is a required parameter."
-      );
+      throw new TypeError("appName is a required parameter.");
     }
 
     const _component = component || AWS_LAMBDA_FUNCTION_NAME;
 
     if (_component == null) {
-      throw new TypeError(
-        "component is a required parameter."
-      );
+      throw new TypeError("component is a required parameter.");
     }
 
     const _module = MODULE_NAME || CURRENT_MODULE_NAME || module;
