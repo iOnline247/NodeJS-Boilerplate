@@ -29,7 +29,6 @@
     "eslint-plugin-import": "^2.22.0",
     "husky": "^3.0.3",
     "lint-staged": "^8.1.0",
-    "prettier": "^2.0.5",
     "prettier-eslint": "^11.0.0",
     "typescript": "^4.0.0-dev.20200725"
   },
