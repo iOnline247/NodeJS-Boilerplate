@@ -4,10 +4,10 @@
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
-    "build": "del-cli ./dist .ts --force & tsc",
+    "build": "npm run clean:dist && tsc",
+    "clean:dist": "del-cli ./dist ./.ts",
+    "dev": "npm run clean:dist && tsc --watch",
     "lint:base": "eslint --ignore-path .gitignore",
-    "lint:check": "npm run lint:base -- src/",
-    "lint:write": "npm run lint:check -- --fix",
     "prepare": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
