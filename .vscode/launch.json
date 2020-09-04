@@ -17,6 +17,20 @@
         "<node_internals>/**/*.js"
       ],
       "autoAttachChildProcesses": true
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Current File",
+      "program": "${file}",
+      // "runtimeArgs": ["--harmony"], //"-r", "esm"],
+      "sourceMaps": true,
+      "smartStep": true,
+      "skipFiles": [
+        "${workspaceFolder}/node_modules/**/*.js",
+        "<node_internals>/**/*.js"
+      ],
+      "autoAttachChildProcesses": true
     }
   ]
 }

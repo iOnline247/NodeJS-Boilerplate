@@ -23,7 +23,8 @@
     "del-cli": "^3.0.1",
     "husky": "^3.0.3",
     "lint-staged": "^8.1.0",
-    "rome": "^10.0.3-beta",
+    "prettier-eslint": "^11.0.0",
+    "rome": "^10.0.4-beta",
     "typescript": "^4.0.0-dev.20200725"
   },
   "optionalDependencies": {
