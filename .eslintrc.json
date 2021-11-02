@@ -24,6 +24,8 @@
       // enable the rule specifically for TypeScript files
       "files": ["*.ts", "*.tsx"],
       "rules": {
+        "no-console": ["allow"],
+        "no-restricted-syntax": ["allow", "ForOfStatement"],
         "@typescript-eslint/explicit-module-boundary-types": ["error"]
       }
     }
